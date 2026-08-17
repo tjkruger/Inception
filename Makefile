@@ -4,11 +4,11 @@
 
 # Your 42 login is auto-detected from the current user.
 # Override on the command line if needed: make LOGIN=wil
-export LOGIN		:= $(shell whoami)
+LOGIN		:= tjkruger
 
 COMPOSE_DIR	:= srcs
 COMPOSE_FILE	:= $(COMPOSE_DIR)/docker-compose.yml
-DATA_DIR	:= /home/$(LOGIN)/data
+DATA_DIR	:= /home/tjkruger/data
 
 # Colors for pretty output
 GREEN		:= \033[0;32m
@@ -47,8 +47,8 @@ restart: down up
 # ============================================================================
 
 data_dirs:
-	@mkdir -p $(DATA_DIR)/wordpress
-	@mkdir -p $(DATA_DIR)/mariadb
+	@sudo mkdir -p $(DATA_DIR)/wordpress
+	@sudo mkdir -p $(DATA_DIR)/mariadb
 
 # ============================================================================
 #  Cleaning
